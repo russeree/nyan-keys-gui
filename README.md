@@ -41,7 +41,7 @@ Obtains current information about the Nyan Keys keyboard. Name, version, author,
 Writes a name to the owner field in the Nyan Keys EEPROM, this transcends individual firmware flashes as the information is not stored on the STM32F723 MCU or the FPGA.
 
 ### ```write-bitstream [bytes]```
-Writes an icecompr compressed FPGA bitstream to the second eeprom bank. The max size ```[bytes]``` that is supported is 65536 bytes. Once the command is executed all serial data passed though the CDC channel is written directly to memory. Once the number of bytes have been transmitted over the CDC channel NyanOS will return to ```command mode``` to accept new commands. A sha256 hash of the data written to memory is printed to the terminal. 
+Writes an icecompr compressed FPGA bitstream to the second EEPROM bank. The max size ```[bytes]``` that is supported is 65536 bytes. Once the command is executed all serial data passed though the CDC channel is written directly to memory. Once the number of bytes have been transmitted over the CDC channel NyanOS will return to ```command mode``` to accept new commands. A sha256 hash of the data written to memory is printed to the terminal. 
 
 
 # Action Buttons 🏃
