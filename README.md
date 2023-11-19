@@ -1,11 +1,5 @@
-# Serial Terminal
+# NyanOS GUI - A Web Serial API Interface
 
-This repository contains a Progressive Web App that allows the user to
-communicate with a locally connected serial device through an interactive
-terminal. This provides a demonstration of the [Serial
-API](https://wicg.github.io/serial/).
-
-This API is available starting with Chrome 89, Edge 89, and Opera 76.
 
 ## Privacy
 
