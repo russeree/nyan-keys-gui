@@ -1,0 +1,194 @@
+@font-face {
+    font-family: 'Overpass-Bold';
+    src: url('fonts/webfonts/Overpass-Bold.woff2') format('woff2');
+    font-weight: 600; /* SemiBold is often considered 600 weight */
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Overpass-SemiBold';
+    src: url('fonts/webfonts/Overpass-SemiBold.woff2') format('woff2');
+    font-weight: 600; /* SemiBold is often considered 600 weight */
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Overpass-Regular';
+    src: url('fonts/webfonts/Overpass-Regular.woff2') format('woff2');
+    font-weight: 600; /* SemiBold is often considered 600 weight */
+    font-style: normal;
+}
+
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    background-color: #18191a;
+    font-family: Arial, sans-serif;
+    color: #e4e6eb;
+    font-family: 'Overpass-Regular', Arial, sans-serif;
+}
+
+h2 {
+    margin: 0;
+    font-family: 'Overpass-SemiBold', Arial, sans-serif;
+    font-weight: 600; /* Ensure that the font-weight matches the @font-face declaration */
+}
+
+/**
+ * Animated Background
+ */
+@keyframes gradientAnimation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.animated-background {
+  animation: gradientAnimation 5s ease infinite;
+  background: linear-gradient(-45deg, #0f0c29, #302b63, #24243e, #1F1C2C);
+  background-size: 400% 400%;
+}
+
+/**
+ * Main Content CSS
+ */
+.main-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.main-content {
+    width: 100%;
+    max-width: 777px;
+    background-color: #242526;
+    border-radius: 33px;
+    margin: 2px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+    overflow: hidden;
+}
+
+.header {
+    position: relative; /* Add this line */
+    background-color: #3a3b3c;
+    color: #e4e6eb;
+    padding: 16px;
+    text-align: center;
+    font-family: 'Overpass-Bold', Arial, sans-serif;
+}
+
+.logo {
+    padding-top: 20px;
+    width: 133px;
+    cursor: pointer;
+}
+
+.content {
+    padding: 16px;
+}
+
+#outputTextbox {
+    width: calc(100% - 32px);
+    margin-bottom: 16px;
+    background-color: #3a3b3c;
+    border: none;
+    color: #e4e6eb;
+}
+
+.footer {
+    background-color: #3a3b3c;
+    color: #e4e6eb;
+    padding: 16px;
+    text-align: center;
+}
+
+.hidden {
+    display: none;
+}
+
+/**
+ * Nyan Action Buttons
+ */
+.bitstream-btn {
+    margin-top: 5px;
+    padding: 10px 20px;
+    background-color: #4CAF50; /* Example color */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    background-image: url('images/icons/bitstream_download/bitstream-download-black.svg');
+    background-repeat: no-repeat;
+    background-position: 10px center; /* Positioning the icon */
+    background-size: 30px 30px; /* Size of the icon */
+    text-indent: 30px; /* Making space for the icon */
+}
+
+.bitstream-btn:hover {
+    background-color: #45a049; /* Darker shade for hover effect */
+}
+
+/**
+ * Nyan Cat Speech Bubbles 
+ */
+@keyframes wobble {
+    0%, 100% {
+        transform: rotate(-5deg);
+    }
+    50% {
+        transform: rotate(5deg);
+    }
+}
+
+.speech-bubble {
+    position: absolute;
+    top: 15px;
+    left: 53%;
+    width: auto;
+    padding: 8px;
+    background-color: white;
+    border-radius: 8px;
+    border: 2px solid #242526;
+    color: #18191a;
+    text-align: center;
+    font-size: 14px;
+    z-index: 10;
+    animation: wobble .5s infinite; 
+}
+
+.speech-bubble:after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 20px;
+    border-width: 10px;
+    border-style: solid;
+    border-color: white transparent transparent transparent;
+}
+
+.speech-bubble.hidden {
+    opacity: 0;
+    visibility: hidden;
+}
+
+
+
+/**
+ * XTERM NyanOS GUI Styling
+ */
+.xterm-viewport {
+    display: none;
+}
+.xterm-screen {
+    background-color: black;
+}
+
