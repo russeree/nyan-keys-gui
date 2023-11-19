@@ -17,30 +17,28 @@ Browser based method to interact with the Nyan Keys Keyboard and/or NyanOS (NOS)
 
 # Action Buttons
 ## Write FPGA Bitstream
-Allows you to upload and reconfigure a Lattice fpga bitstream for the primary FPGA of the Nyan Keys Keyboard. Bitstreams must be compressed using the [`icecompr.py`](https://github.com/YosysHQ/icestorm/tree/master/icecompr) using the following command on your .bin bitstream.
+This feature allows the uploading and reconfiguration of a Lattice FPGA bitstream for the primary FPGA of the Nyan Keys Keyboard. Bitstreams must be compressed using [`icecompr.py`](https://github.com/YosysHQ/icestorm/tree/master/icecompr), as shown in the following command:
 
 ```sh 
 python3 icecompr.py < example_8k.bin > example_8k.compr
 ```
 
-The current EEPROM installed to the Nyan Keys PCB is i2c based and supports 1Mbit (131070 bytes) of storage which is just shy of 135100 bytes needed to store the uncompressed bitstream for the Lattice Ice40HX4k. Using icecompr allowed for compression ratios of .2 - .4 resulting in a compressed bitstream size of approx ~26000 bytes for the same Ice40HX4k bitstream. NyanOS doesn't support any forms of error checking currently and or the use of uncompressed bitstreams. 
+The Nyan Keys PCB's EEPROM is I2C-based with 1Mbit (131070 bytes) of storage. The uncompressed bitstream for the Lattice Ice40HX4k is slightly larger, requiring compression. The `icecompr` utility typically achieves compression ratios of 0.2 - 0.4, reducing the Ice40HX4k bitstream to approximately 26000 bytes. NyanOS currently does not support error checking or uncompressed bitstreams. 
 
-Uploading the wrong file will not result in a hardware failure of the Nyan Keys keyboard but will cause the FPGA to stop functioning and as such keyboard input will be lost until the original bitstream is flashed back to the keyboard. 
+Incorrectly uploading a file will not damage the Nyan Keys keyboard but will disable the FPGA, rendering the keyboard inoperative until the correct bitstream is restored. 
 
-There is a visual bug currently where upon beginning the writing of a bitstream the command ```write-bitstream size XXXXX``` will be displayed multiple times. This does not have any effect on the ability and success of a bitstream write to the non-volatile EEPROM memory. 
+A known visual glitch displays the command `write-bitstream size XXXXX` multiple times during the bitstream writing process. This does not impact the successful writing of the bitstream to the non-volatile EEPROM memory. 
 
-A SHA256 hash of the compressed bitstream is presented and can be used to compare against your compressed bitstream file that you uploaded. ```sha256sum <filename>```
+A SHA256 hash of the compressed bitstream is provided for verification against your uploaded file. Use `sha256sum <filename>` for comparison.
 
-Source code and original release uncompressed and compressed bitstreams can be found at https://github.com/russeree/nyan-keys-ice40hx4k-bitstream
+The source code and original release bitstreams, both compressed and uncompressed, are available at [https://github.com/russeree/nyan-keys-ice40hx4k-bitstream](https://github.com/russeree/nyan-keys-ice40hx4k-bitstream)
 
 ## Nyan Keys Terminal Access
-Become the 'Shadowy Super Coder" - _Elizabeth Warren_ that you always dreamed of being. The Nyan Keys keyboard has it's own operating system NyanOS (NOS) that has a functional serial USB CDC interface. The Nyan-Gui upon connection by clicking the nyan keys logo will greet you with an MoTD and a terminal with cursor. Right now only the bare minimum is implemented. Commands that are available include. 
+Become the 'Shadowy Super Coder" - _Elizabeth Warren_ with the Nyan Keys keyboard's own operating system, NyanOS (NOS), featuring a functional serial USB CDC interface. Upon connecting via the Nyan-Gui, you'll be welcomed with a Message of the Day (MoTD) and a terminal cursor. The current implementation includes basic commands with a maximum buffer length of 128 characters:
 
-NOTE: Maximum command line buffer length is 128 characters.
-
- - ```getinfo``` - Display various properties about the keyboard and OS including owner.
- - ```set-owner <name with spaces>``` - Writes your desired name to EEPROM and is displayed with ```getinfo```.
- - ```write-bitstream <size>``` - Write a bitstream file to the Nyan Keys EEPROM.
+ - `getinfo` - Displays keyboard and OS properties, including the owner.
+ - `set-owner <name with spaces>` - Assigns your desired name to EEPROM, viewable with `getinfo`.
+ - `write-bitstream <size>` - Uploads a bitstream file to the Nyan Keys EEPROM.
 
 ## Privacy
 
