@@ -1,7 +1,11 @@
-![Hello](https://github.com/russeree/nyan-keys-gui/blob/main/public/images/logo/icon_square.png)
+<div align="center">
+ <img src="public/images/logo/icon_square.png" width="100" height="100">
+</div>
 
+<div align="center">
+    <h1>NyanOS GUI 🐱 - A Web Serial API Interface</h1>
+</div>
 
-# NyanOS GUI 🐱 - A Web Serial API Interface
 Browser based method to interact with the Nyan Keys Keyboard and/or NyanOS (NOS) implementation. Designed to be run locally as to preserve privacy. This A PWA (Progressive Web Application) that acts as a serial command relay and macro assistant. Features include 
  - Nyan Cat connection assistant
  - XTerm Javascript based serial terminal
