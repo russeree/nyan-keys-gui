@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NyanOS GUI 🐱</title>
+    <link rel="stylesheet" href="nyan_styles.css">
+</head>
+<body>
+    <div class="main-wrapper animated-background">
+        <div class="main-wrapper">
+          <div class="main-content">
+
+            <div class="header">
+              <img src="images/logo/icon_square.png" alt="Logo" class="logo" id="logoButton">
+              <div class="speech-bubble" id="connectBubble">Click to connect!</div>
+              <h1>Nyan Keys - Keyboard Interface</h1>
+            </div>
+
+            <div id="notSupported" class="hidden content">
+              <h3>Your browser does not support the Web Serial API. Use Chrome/Chromium</h3>
+            </div>
+
+            <div class="content">
+                <h2>NyanOS (NOS) Graphical User Interface</h2>
+                <p>A basic interface to your keyboard - Click the Nyan cat and get connected.</p>
+                <div id="terminal"></div>
+            </div>
+
+            <div class="content">
+                <h2>Nyan Actions</h2>
+                <button id="writeFpgaBitstream" class="bitstream-btn">
+                    Write FPGA Bitstream
+                </button>
+                <input type="file" id="bitstreamInput" hidden>
+            </div>
+
+            <div class="footer">
+              <p>&copy; 2023 Portland.HODL ⚡</p>
+            </div>
+
+          </div>
+        </div>
+    </div>
+
+    <script type="module" src="/src/index.ts"></script>
+</body>
+</html>
