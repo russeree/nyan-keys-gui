@@ -19,6 +19,8 @@ The NyanOS GUI provides a browser-based interface for interacting with the Nyan 
  - [Actions](https://github.com/russeree/nyan-keys-gui#action-buttons)
    - [Write FPGA Bitstream](https://github.com/russeree/nyan-keys-gui#write-fpga-bitstream)
    - [BitCoin Mining](https://github.com/russeree/nyan-keys-gui#bitcoin-solo-mining)
+ - [Privacy](https://github.com/russeree/nyan-keys-gui#privacy)
+ - [Building](https://github.com/russeree/nyan-keys-gui#building)
 
 # Features include 
  - Nyan Cat connection assistant
