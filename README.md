@@ -6,7 +6,9 @@
     <h1>NyanOS GUI 🐱 - A Web Serial API Interface</h1>
 </div>
 
-Browser based method to interact with the Nyan Keys Keyboard and/or NyanOS (NOS) implementation. Designed to be run locally as to preserve privacy. This A PWA (Progressive Web Application) that acts as a serial command relay and macro assistant. Features include 
+Browser based method to interact with the Nyan Keys Keyboard and/or NyanOS (NOS) implementation. Designed to be run locally as to preserve privacy. This A PWA (Progressive Web Application) that acts as a serial command relay and macro assistant. 
+
+# Features include 
  - Nyan Cat connection assistant
  - XTerm Javascript based serial terminal
  - Action buttons
@@ -31,6 +33,14 @@ A SHA256 hash of the compressed bitstream is presented and can be used to compar
 
 Source code and original release uncompressed and compressed bitstreams can be found at https://github.com/russeree/nyan-keys-ice40hx4k-bitstream
 
+## Nyan Keys Terminal Access
+Become the 'Shadowy Super Coder" - _Elizabeth Warren_ that you always dreamed of being. The Nyan Keys keyboard has it's own operating system NyanOS (NOS) that has a functional serial USB CDC interface. The Nyan-Gui upon connection by clicking the nyan keys logo will greet you with an MoTD and a terminal with cursor. Right now only the bare minimum is implemented. Commands that are available include. 
+
+NOTE: Maximum command line buffer length is 128 characters.
+
+ - ```getinfo``` - Display various properties about the keyboard and OS including owner.
+ - ```set-owner <name with spaces>``` - Writes your desired name to EEPROM and is displayed with ```getinfo```.
+ - ```write-bitstream <size>``` - Write a bitstream file to the Nyan Keys EEPROM.
 
 ## Privacy
 
