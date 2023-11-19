@@ -6,7 +6,7 @@
     <h1>NyanOS GUI 🐱 - A Web Serial API Interface</h1>
 </div>
 
-Browser based method to interact with the Nyan Keys Keyboard and/or NyanOS (NOS) implementation. Designed to be run locally as to preserve privacy. This A PWA (Progressive Web Application) that acts as a serial command relay and macro assistant. 
+The NyanOS GUI provides a browser-based interface for interacting with the Nyan Keys Keyboard and NyanOS (NOS) implementations. Designed for local use, it prioritizes privacy and operates as a Progressive Web Application (PWA), serving as a serial command relay and macro assistant. 
 
 # Features include 
  - Nyan Cat connection assistant
