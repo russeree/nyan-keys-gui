@@ -51,7 +51,7 @@ h2 {
 }
 
 .animated-background {
-  animation: gradientAnimation 5s ease infinite;
+  animation: gradientAnimation 4s ease infinite;
   background: linear-gradient(-45deg, #0f0c29, #302b63, #24243e, #1F1C2C);
   background-size: 400% 400%;
 }
@@ -134,6 +134,26 @@ h2 {
 }
 
 .bitstream-btn:hover {
+    background-color: #45a049; /* Darker shade for hover effect */
+}
+
+.bitcoin-mining-btn {
+    margin-top: 5px;
+    padding: 10px 20px;
+    background-color: #4CAF50; /* Example color */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    background-image: url('images/icons/bitcoin_mining/bitcoin.svg');
+    background-repeat: no-repeat;
+    background-position: 10px center; /* Positioning the icon */
+    background-size: 30px 30px; /* Size of the icon */
+    text-indent: 30px; /* Making space for the icon */
+}
+
+.bitcoin-mining-btn:hover {
     background-color: #45a049; /* Darker shade for hover effect */
 }
 
