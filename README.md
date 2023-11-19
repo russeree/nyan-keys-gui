@@ -10,6 +10,13 @@
 The NyanOS GUI provides a browser-based interface for interacting with the Nyan Keys Keyboard and NyanOS (NOS) implementations. Designed for local use, it prioritizes privacy and operates as a Progressive Web Application (PWA), serving as a serial command relay and macro assistant.
 </div>
 
+# Index
+
+[Features](https://github.com/russeree/nyan-keys-gui#features-include)<br>
+[Actions](https://github.com/russeree/nyan-keys-gui#action-buttons)
+ - [Write FPGA Bitstream](https://github.com/russeree/nyan-keys-gui#write-fpga-bitstream)
+ - BitCoin mining
+ 
 # Features include 
  - Nyan Cat connection assistant
  - XTerm Javascript based serial terminal
@@ -41,6 +48,8 @@ Become the 'Shadowy Super Coder" - _Elizabeth Warren_ with the Nyan Keys keyboar
  - `getinfo` - Displays keyboard and OS properties, including the owner.
  - `set-owner <name with spaces>` - Assigns your desired name to EEPROM, viewable with `getinfo`.
  - `write-bitstream <size>` - Uploads a bitstream file to the Nyan Keys EEPROM.
+
+### ```getinfo```
 
 ## Privacy
 
