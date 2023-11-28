@@ -42,7 +42,7 @@ let reader: ReadableStreamDefaultReader | ReadableStreamBYOBReader | undefined;
 
 const urlParams = new URLSearchParams(window.location.search);
 const usePolyfill = urlParams.has('polyfill');
-const bufferSize = 8 * 65536; // 8kB
+const bufferSize = 8 * 65536; // 65.5kB
 
 const term = new Terminal({
   scrollback: 0,
@@ -54,14 +54,12 @@ const term = new Terminal({
 
 const fitAddon = new FitAddon();
 term.loadAddon(fitAddon);
-
 term.loadAddon(new WebLinksAddon());
 
 const encoder = new TextEncoder();
 
 term.onData((data) => {
   if (port?.writable == null) {
-    console.warn(`unable to find writable port`);
     return;
   }
 
@@ -112,17 +110,13 @@ async function connectToPort(): Promise<void> {
     parity: 'none' as ParityType,
     stopBits: 1,
     flowControl: 'none' as FlowControlType,
-    bufferSize: 8 * 1024,
+    bufferSize: bufferSize,
   };
-
-  console.log(options);
 
   try {
     await port.open(options);
-    await port.setSignals({dataTerminalReady: false});
     term.clear();
     term.writeln('<CONNECTED>');
-    await port.setSignals({dataTerminalReady: true});
     connectButton.disabled = false;
     if (connectBubble) {
       connectBubble.style.display = 'none'; // Hide the connectBubble
@@ -261,8 +255,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         if (port && port.writable) {
           try {
             const byteArray = new Uint8Array(reader.result as ArrayBuffer);
-            const chunkSize = 64;
-
+            const chunkSize = 128;
             const writer = port.writable.getWriter();
             const initialMessage = `write-bitstream ${byteArray.length}\r\n`;
             await writer.write(new TextEncoder().encode(initialMessage));
